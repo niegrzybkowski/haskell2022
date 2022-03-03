@@ -1,0 +1,16 @@
+{
+    "configurations": [
+    {
+        "command": "runhaskell ${file}",
+        "name": "Runhaskell",
+        "request": "launch",
+        "type": "node-terminal"
+    },
+    {
+        "command": "ghci ${file}",
+        "name": "Load into GHCi",
+        "request": "launch",
+        "type": "node-terminal"
+    },
+    ]
+}
