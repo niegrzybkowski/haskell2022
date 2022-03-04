@@ -41,5 +41,5 @@ sinTaylorLoop x n currentn total lastx lastfac lastsign
         (-lastsign)
 
 sinTaylor x n 
-    | n > 0 = sinTaylorLoop x n 1 0 x 1 1
+    | n > 0 = sinTaylorLoop x (n+1) 1 0 x 1 1
     | otherwise = 0/0
