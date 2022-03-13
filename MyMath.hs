@@ -40,6 +40,17 @@ sinTaylorLoop x n currentn total lastx lastfac lastsign
         (lastfac * (currentn * 2) * (currentn * 2 + 1))
         (-lastsign)
 
-sinTaylor x n 
+sinTaylor x n
     | n > 0 = sinTaylorLoop x (n+1) 1 0 x 1 1
     | otherwise = 0/0
+
+silnia :: Integer -> Integer 
+silnia n 
+    | n == 1 = 1
+    | otherwise = n * silnia (n-1)
+
+silnia' :: Integer -> Integer 
+silnia' n = silniarec n 1
+    where 
+        silniarec 1 prod = prod
+        silniarec k prod = silniarec (k-1) $! (prod * k)
