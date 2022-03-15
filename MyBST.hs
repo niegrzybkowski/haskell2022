@@ -23,3 +23,14 @@ add n@(Node a left right) val
 
 addIgn :: Ord a => Bst a -> a -> Bst a
 addIgn tree val = fst $ add tree val
+
+infBst :: Bst Integer 
+infBst = Node 1 (nextNode 1) Nil
+    where 
+        nextNode x = Node (x+3) (nextNode (x+3)) Nil 
+
+-- Funkcja contains zadziała, ponieważ nie wymuszamy obliczenia pod-drzewa
+-- Funkcja add również zadziała, ale pod warunkiem, że nie wymusimy obliczenia całego drzewa
+-- czyli na przykład 
+-- infBst `addIgn` 8 -- wywołuje w ghci: show infBst
+-- infBst `addIgn` 8 `contains` 8 -- zwraca True i działa
